@@ -1128,26 +1128,7 @@ function showDetail(t) {
               class="w-full p-3 bg-slate-50 border-none rounded-xl accounting outline-none focus:ring-2 focus:ring-blue-500 font-bold">
           </div>
           
-          <div>
-            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1 mb-2 block">Metode Pembayaran</label>
-            <div class="grid grid-cols-2 gap-3">
-              <label class="cursor-pointer group">
-                <input type="radio" name="payment-method" value="Cash" class="hidden peer">
-                <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-blue-500 peer-checked:bg-blue-50 group-active:scale-95">
-                  <i data-lucide="banknote" class="w-4 h-4 text-slate-400 peer-checked:text-blue-600"></i>
-                  <span class="text-sm font-bold text-slate-600 peer-checked:text-blue-700">Cash</span>
-                </div>
-              </label>
-              <label class="cursor-pointer group">
-                <input type="radio" name="payment-method" value="Rekening" class="hidden peer">
-                <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-blue-500 peer-checked:bg-blue-50 group-active:scale-95">
-                  <i data-lucide="credit-card" class="w-4 h-4 text-slate-400 peer-checked:text-blue-600"></i>
-                  <span class="text-sm font-bold text-slate-600 peer-checked:text-blue-700">Rekening</span>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div>
+         
 
         <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
           <div class="flex justify-between items-center mb-1">
@@ -1198,26 +1179,7 @@ else if (tab === 'pembelian') {
           </div>
         </div>
 
-        <!-- Update: Metode Pembayaran Card Style -->
-        <div>
-          <label class="block text-[10px] font-bold text-slate-400 uppercase ml-1 mb-2 tracking-widest">Metode Pembayaran</label>
-          <div class="grid grid-cols-2 gap-3">
-            <label class="cursor-pointer group">
-              <input type="radio" name="payment-method-beli" value="Cash" class="hidden peer">
-              <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-red-500 peer-checked:bg-red-50 group-active:scale-95">
-                <i data-lucide="banknote" class="w-4 h-4 text-slate-400 peer-checked:text-red-600"></i>
-                <span class="text-sm font-bold text-slate-600 peer-checked:text-red-700">Cash</span>
-              </div>
-            </label>
-            <label class="cursor-pointer group">
-              <input type="radio" name="payment-method-beli" value="Rekening" class="hidden peer">
-              <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-red-500 peer-checked:bg-red-50 group-active:scale-95">
-                <i data-lucide="credit-card" class="w-4 h-4 text-slate-400 peer-checked:text-red-600"></i>
-                <span class="text-sm font-bold text-slate-600 peer-checked:text-red-700">Rekening</span>
-              </div>
-            </label>
-          </div>
-        </div>
+        
 
         <div>
           <label class="block text-[10px] font-bold text-slate-400 uppercase ml-1 mb-1 tracking-wider">Bayar Sekarang (DP)</label>
@@ -1246,27 +1208,7 @@ else if (tab === 'pembelian') {
         <i data-lucide="calculator" class="text-orange-600"></i> Pengeluaran Biaya
       </h2>
       
-      <div class="space-y-4">
-        <!-- Update: Metode Pembayaran Card Style -->
-        <div>
-          <label class="block text-[10px] font-bold text-slate-400 uppercase ml-1 mb-2 tracking-widest">Metode Pembayaran</label>
-          <div class="grid grid-cols-2 gap-3">
-            <label class="cursor-pointer group">
-              <input type="radio" name="payment-method-op" value="Cash" class="hidden peer">
-              <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 group-active:scale-95">
-                <i data-lucide="banknote" class="w-4 h-4 text-slate-400 peer-checked:text-orange-600"></i>
-                <span class="text-sm font-bold text-slate-600 peer-checked:text-orange-700">Cash</span>
-              </div>
-            </label>
-            <label class="cursor-pointer group">
-              <input type="radio" name="payment-method-op" value="Rekening" class="hidden peer">
-              <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 group-active:scale-95">
-                <i data-lucide="credit-card" class="w-4 h-4 text-slate-400 peer-checked:text-orange-600"></i>
-                <span class="text-sm font-bold text-slate-600 peer-checked:text-orange-700">Rekening</span>
-              </div>
-            </label>
-          </div>
-        </div>
+      
         
         <div class="flex items-center gap-3 p-4 bg-red-50 border border-red-100 rounded-2xl">
           <input type="checkbox" id="is_refund" class="w-6 h-6 accent-red-600 cursor-pointer">
@@ -1685,10 +1627,7 @@ function savePenjualan() {
   // ----------------------------------------
 
   // --- VALIDASI METODE PEMBAYARAN ---
-  const selectedRadio = document.querySelector('input[name="payment-method"]:checked');
-  if (!selectedRadio) {
-    return alert("Silahkan pilih Metode Pembayaran (Cash atau Rekening) terlebih dahulu!");
-  }
+  
 
   // --- VALIDASI & AMBIL OPSI KETERANGAN CEPAT (Wajib Pilih) ---
   const selectedKetOpt = document.querySelector('input[name="p_ket_opt"]:checked');
@@ -1726,7 +1665,7 @@ function savePenjualan() {
     items: items,
     diskon: unmask(document.getElementById('p_disc').value),
     dp: unmask(document.getElementById('p_dp').value),
-    metode: selectedRadio.value 
+    metode: 'Kas Bendahara' 
   };
   
   payload.total = items.reduce((a, b) => a + (b.qty * b.harga), 0);
@@ -1738,10 +1677,7 @@ function savePenjualan() {
   if(items.length === 0) return alert("Daftar belanja kosong!");
   
   // --- VALIDASI METODE PEMBAYARAN (Wajib Pilih) ---
-  const selectedRadioBeli = document.querySelector('input[name="payment-method-beli"]:checked');
-  if (!selectedRadioBeli) {
-    return alert("Silahkan pilih Metode Pembayaran (Cash atau Rekening) terlebih dahulu!");
-  }
+  
   // ------------------------------------------------
   
   const supplier = (document.getElementById('b_supp').value || '-').toUpperCase();
@@ -1757,7 +1693,7 @@ function savePenjualan() {
     total: total,
     dp: unmask(document.getElementById('b_dp').value),
     // Mengambil nilai dari radio button yang dipilih
-    metode: selectedRadioBeli.value
+    metode: 'Kas Bendahara'
   };
   
   runScript('processTransaction', payload, 'pembelian');
@@ -1772,16 +1708,8 @@ function savePenjualan() {
 
   // --- VALIDASI METODE PEMBAYARAN (Update Baru) ---
   // Mencari radio button yang dipilih dalam grup 'payment-method-op'
-  const selectedRadioOp = document.querySelector('input[name="payment-method-op"]:checked');
   
-  if (nominal <= 0 || !keterangan) {
-    return alert("Nominal dan keterangan wajib diisi.");
-  }
 
-  if (!selectedRadioOp) {
-    return alert("Silahkan pilih Metode Pembayaran (Cash atau Rekening) terlebih dahulu!");
-  }
-  // ------------------------------------------------
 
   const payload = {
     action: "saveOperasional", 
@@ -1789,7 +1717,7 @@ function savePenjualan() {
     nominal: nominal,
     ket: isRefund ? "[REFUND] " + keterangan.toUpperCase() : keterangan.toUpperCase(),
     // Mengambil nilai dari radio card yang terpilih
-    metode: selectedRadioOp.value
+    metode: 'Kas Bendahara'
   };
 
   runScript('saveOperasional', payload, 'operasional');
@@ -1847,13 +1775,7 @@ function openModal() {
 async function eksekusiPelunasanUtang(id, nominal) {
   // --- VALIDASI & PENGAMBILAN METODE (Update Baru) ---
   // Mencari radio button yang dipilih dalam grup 'pay-utang-method'
-  const selectedRadio = document.querySelector('input[name="pay-utang-method"]:checked');
-  
-  if (!selectedRadio) {
-    return alert("Silahkan pilih Metode Pembayaran terlebih dahulu!");
-  }
-  
-  const metode = selectedRadio.value;
+
   // --------------------------------------------------
 
   // Mengambil nama supplier dari elemen display di modal
@@ -1867,7 +1789,7 @@ async function eksekusiPelunasanUtang(id, nominal) {
     type: 'BAYAR_UTANG',
     idUtang: id,
     nominal: nominal,
-    metode: metode,
+    metode: 'Kas Bendahara',
     ket: `Pelunasan Utang: ${namaSupplier}` 
   };
   
@@ -2004,26 +1926,7 @@ async function bayarUtang(idUtang, sisaLama, namaSupplier) {
 
         ${itemsHtml}
 
-        <div class="space-y-3 pt-2">
-          <div>
-            <label class="text-[10px] font-bold text-slate-400 uppercase ml-1 mb-2 block">Metode Pembayaran</label>
-            <div class="grid grid-cols-2 gap-3">
-              <label class="cursor-pointer group">
-                <input type="radio" name="pay-utang-method" value="Cash" class="hidden peer">
-                <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-red-500 peer-checked:bg-red-50 group-active:scale-95">
-                  <i data-lucide="banknote" class="w-4 h-4 text-slate-400 peer-checked:text-red-600"></i>
-                  <span class="text-sm font-bold text-slate-600 peer-checked:text-red-700">Cash</span>
-                </div>
-              </label>
-              <label class="cursor-pointer group">
-                <input type="radio" name="pay-utang-method" value="Rekening" class="hidden peer">
-                <div class="flex items-center justify-center gap-2 p-3 rounded-xl border-2 border-slate-100 transition-all peer-checked:border-red-500 peer-checked:bg-red-50 group-active:scale-95">
-                  <i data-lucide="credit-card" class="w-4 h-4 text-slate-400 peer-checked:text-red-600"></i>
-                  <span class="text-sm font-bold text-slate-600 peer-checked:text-red-700">Rekening</span>
-                </div>
-              </label>
-            </div>
-          </div>
+        
           
           <div class="flex gap-2 pt-2">
             <button onclick="closeModal()" class="flex-1 py-4 bg-slate-100 text-slate-600 font-bold rounded-2xl active:scale-95 transition-transform">Batal</button>
@@ -2213,8 +2116,7 @@ async function bayarPiutang(id, sisa, nama) {
 
 function toggleShopeeInput() {
   // Mencari nilai dari radio button yang dipilih
-  const selectedRadio = document.querySelector('input[name="pi-method"]:checked');
-  const m = selectedRadio ? selectedRadio.value : "";
+ 
   const container = document.getElementById('shopee_ref_container');
   
   m === 'Shopee' ? container.classList.remove('hidden') : container.classList.add('hidden');
@@ -2224,16 +2126,11 @@ function toggleShopeeInput() {
   const namaAsli = document.getElementById('pi_nama_display')?.innerText || 'PELANGGAN';
   
   // Ambil elemen radio yang terpilih
-  const selectedRadio = document.querySelector('input[name="pi-method"]:checked');
+ 
   const noShopee = document.getElementById('pi_shope_ref').value;
 
   // Validasi: Harus pilih metode
-  if (!selectedRadio) {
-    return alert("Silahkan pilih Metode Penerimaan (Cash, Transfer, atau Shopee)!");
-  }
-
-  const metodePilihan = selectedRadio.value;
-
+ 
   // Validasi: Jika Shopee, nomor referensi wajib diisi
   if (metodePilihan === 'Shopee' && !noShopee) {
     return alert("Untuk metode Shopee, No. Transaksi wajib diisi!");
